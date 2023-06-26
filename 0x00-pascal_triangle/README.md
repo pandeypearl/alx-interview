@@ -10,4 +10,4 @@ Create a function def pascal_triangle(n): that returns a list of lists of intege
 </ul>
 
 <p>File</p>
-<a href="">0-pascal_triangle.py</a>
+<a href=""https://github.com/pandeypearl/alx-interview/blob/master/0x00-pascal_triangle/0-pascal_triangle.py>0-pascal_triangle.py</a>
