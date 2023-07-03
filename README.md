@@ -1,4 +1,5 @@
 # AlX Interview Preparation
 
 ## Questions
-<p><a href="https://github.com/pandeypearl/alx-interview/tree/master/0x00-pascal_triangle">Pascal's Triangle</a></p>
++ [Pascal's Triangle](0x00-pascal_triangle)
++ [Lockboxes](0x01-lockboxes)
