@@ -11,10 +11,17 @@ def canUnlockAll(boxes):
     and False otherwise
     """
     box_keys = [0]
-    for box_key in box_keys:
-        for value in boxes[box_key]:
-            if value not in box_keys:
-                box_keys.append(value)
-    if len(box_keys) == len(boxes):
-        return True
-    return False
+    pending = []
+    for value in range(1, len(boxes)):
+        if value in box_keys:
+            for box_key in boxes[value]:
+                box_keys.append(box_key)
+        else:
+            pending.append(value)
+    for value in pending:
+        if value in box_keys:
+            for box_key in boxes[value]:
+                box_keys.append(box_key)
+        else:
+            return False
+    return True
