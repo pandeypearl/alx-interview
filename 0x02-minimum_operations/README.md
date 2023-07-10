@@ -15,3 +15,7 @@ n = 9
 H => Copy All => Paste => HH => Paste =>HHH => Copy All => Paste => HHHHHH => Paste => HHHHHHHHH
 
 Number of operations: 6
+
+file: [0-minoperations.py](0-minoperations.py)
+
+test file: [0-main.py](0-main.py)
