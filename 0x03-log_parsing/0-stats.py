@@ -10,7 +10,7 @@ def print_m(total_fs, status):
     status list
     """
     print("File size: {:d}".format(total_fs))
-    for key, value in sorted (status.items()):
+    for key, value in sorted(status.items()):
         if value != 0:
             print("{}: {}".format(key, value))
 
