@@ -3,11 +3,11 @@
 represents valid UTF-8"""
 
 
-def eight_bits(int):
+def eight_bits(integer):
     """ converts an integer to its binary
     representation, removing 'Ob' prefix, returning
     full 8 bits of bianry string. """
-    binary = bin(int)[2:]
+    binary = bin(integer)[2:]
     add = '0' * (8 - len(binary))
     return add + binary
 
