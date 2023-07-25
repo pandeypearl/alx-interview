@@ -1,20 +1,19 @@
 #!/usr/bin/python3
-""" Method checking if given data set
-represents valid UTF-8"""
+""" A method that checks if a given data set represents a valid UTF-8 """
 
 
 def eight_bits(integer):
-    """ converts an integer to its binary
-    representation, removing 'Ob' prefix, returning
-    full 8 bits of bianry string. """
+    """ A function that:
+    converts an integer to its binary representation,
+    removes the 'Ob' prefixe
+    and returns the full 8 bits of the binary string """
     binary = bin(integer)[2:]
     add = '0' * (8 - len(binary))
     return add + binary
 
 
 def validUTF8(data):
-    """ Checking if data set represents
-    valid UTF-8 """
+    """ A method that checks if a given data set represents a valid UTF-8 """
     i = 0
     while i < len(data):
         if eight_bits(data[i])[0] == '0':
@@ -29,7 +28,7 @@ def validUTF8(data):
         elif (eight_bits(data[i])[:5] == '11110' and i + 3 < len(data) and
                 eight_bits(data[i + 1])[:2] == '10' and
                 eight_bits(data[i + 2])[:2] == '10' and
-                eight_bits(data[i + 3])[:3] == '10'):
+                eight_bits(data[i + 3])[:2] == '10'):
             i += 4
         else:
             return False
