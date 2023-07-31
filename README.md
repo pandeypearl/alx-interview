@@ -5,3 +5,4 @@
 + [Lockboxes](0x01-lockboxes)
 + [Minimum Operations](0x02-minimum_operations)
 + [UTF-8 Validation](0x04-utf8_validation)
++ [N Queens](0x05-nqueens)
