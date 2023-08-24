@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 makChange function
 """
@@ -21,7 +22,7 @@ def makeChange(coins, total):
             n_coins += total // coins[i]
             total = total % coins[i]
         i += 1
-        
+
     if total == 0:
         return n_coins
     else:
