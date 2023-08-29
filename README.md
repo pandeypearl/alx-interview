@@ -8,3 +8,4 @@
 + [N Queens](0x05-nqueens)
 + [Star Wars API](0x06-starwars_api)
 + [Rotate 2D Matrix](0x07-rotate_2d_matrix)
++ [Island Perimeter](0x09-island_perimeter)
