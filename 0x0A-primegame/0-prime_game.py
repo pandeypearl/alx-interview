@@ -4,36 +4,36 @@ Defines The Prime Game
 """
 
 
-def primeNumber(n):
+def primeNumber(x):
     """
     Checking if number is prime.
     """
-    for i in range(2, n):
-        if n % i == 0:
+    for i in range(2, x):
+        if x % i == 0:
             return False
     return True
 
 
-def isWinner(n, numbers):
+def isWinner(x, nums):
     """
     Determining the winner of the prime game
     """
-    if n < 1 or not numbers or numbers == []:
+    if x < 1 or not nums or nums == []:
         return None
-    rng = min(n, len(numbers))
+    rng = min(x, len(nums))
     maria = 0
     ben = 0
     player = 0
     for rng_it in range(rng):
 
-        if numbers[rng_it] < 2:
+        if nums[rng_it] < 2:
             ben += 1
-        elif numbers[rng_it] == 2:
+        elif nums[rng_it] == 2:
             maria += 1
         else:
             player = True
             isPrime = 1
-            j = list(range(2, numbers[rng_it] + 1))
+            j = list(range(2, nums[rng_it] + 1))
 
             while (isPrime):
                 isPrime = 0
@@ -41,7 +41,7 @@ def isWinner(n, numbers):
                     if (primeNumber(i)):
                         isPrime = 1
                         player = not player
-                        j = list(filter(lambda n: n % i != 0, j))
+                        j = list(filter(lambda x: x % i != 0, j))
 
             if (player):
                 ben += 1
