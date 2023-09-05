@@ -21,35 +21,35 @@ def isWinner(x, nums):
     if x < 1 or not nums or nums == []:
         return None
     rng = min(x, len(nums))
-    maria = 0
-    ben = 0
+    Maria = 0
+    Ben = 0
     player = 0
     for rng_it in range(rng):
 
         if nums[rng_it] < 2:
-            ben += 1
+            Ben += 1
         elif nums[rng_it] == 2:
-            maria += 1
+            Maria += 1
         else:
             player = True
             isPrime = 1
-            j = list(range(2, nums[rng_it] + 1))
+            n = list(range(2, nums[rng_it] + 1))
 
             while (isPrime):
                 isPrime = 0
-                for i in j:
+                for i in n:
                     if (primeNumber(i)):
                         isPrime = 1
                         player = not player
-                        j = list(filter(lambda x: x % i != 0, j))
+                        n = list(filter(lambda x: x % i != 0, n))
 
             if (player):
-                ben += 1
+                Ben += 1
             else:
-                maria += 1
+                Maria += 1
 
-    if maria > ben:
+    if Maria > Ben:
         return 'Maria'
-    elif ben > maria:
+    elif Ben > Maria:
         return 'Ben'
     return None
