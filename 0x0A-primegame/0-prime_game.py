@@ -4,7 +4,7 @@ Defines The Prime Game
 """
 
 
-def primeNumber(x):
+def isPrime(x):
     """
     Checking if number is prime.
     """
@@ -36,7 +36,7 @@ def isWinner(x, nums):
             while (prime_number):
                 prime_number = 0
                 for i in n:
-                    if (primeNumber(i)):
+                    if (isPrime(i)):
                         prime_number = 1
                         player = not player
                         n = list(filter(lambda x: x % i != 0, n))
