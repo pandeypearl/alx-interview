@@ -25,24 +25,21 @@ def isWinner(x, nums):
     Ben = 0
     player = 0
     for rng_it in range(rng):
-
         if nums[rng_it] < 2:
             Ben += 1
         elif nums[rng_it] == 2:
             Maria += 1
         else:
             player = True
-            isPrime = 1
+            prime_number = 1
             n = list(range(2, nums[rng_it] + 1))
-
-            while (isPrime):
-                isPrime = 0
+            while (prime_number):
+                prime_number = 0
                 for i in n:
                     if (primeNumber(i)):
-                        isPrime = 1
+                        prime_number = 1
                         player = not player
                         n = list(filter(lambda x: x % i != 0, n))
-
             if (player):
                 Ben += 1
             else:
