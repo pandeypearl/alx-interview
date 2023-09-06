@@ -20,24 +20,24 @@ def isWinner(x, nums):
     """
     if x < 1 or not nums or nums == []:
         return None
-    rng = min(x, len(nums))
+    r = min(x, len(nums))
     Maria = 0
     Ben = 0
     player = 0
-    for rng_it in range(rng):
-        if nums[rng_it] < 2:
+    for r_i in range(r):
+        if nums[r_i] < 2:
             Ben += 1
-        elif nums[rng_it] == 2:
+        elif nums[r_i] == 2:
             Maria += 1
         else:
             player = True
-            prime_number = 1
-            n = list(range(2, nums[rng_it] + 1))
-            while (prime_number):
-                prime_number = 0
+            prime_exist = 1
+            n = list(range(2, nums[r_i] + 1))
+            while (prime_exist):
+                prime_exist = 0
                 for i in n:
                     if (isPrime(i)):
-                        prime_number = 1
+                        prime_exist = 1
                         player = not player
                         n = list(filter(lambda x: x % i != 0, n))
             if (player):
