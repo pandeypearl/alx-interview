@@ -4,49 +4,26 @@ Defines The Prime Game
 """
 
 
-def isPrime(x):
-    """
-    Checking if number is prime.
-    """
-    for i in range(2, x):
-        if x % i == 0:
-            return False
-    return True
-
-
 def isWinner(x, nums):
     """
     Determining the winner of the prime game
     """
-    if x < 1 or not nums or nums == []:
+    if x < 1 or not nums:
         return None
-    r = min(x, len(nums))
     Maria = 0
     Ben = 0
-    player = 0
-    for r_i in range(r):
-        if nums[r_i] < 2:
-            Ben += 1
-        elif nums[r_i] == 2:
-            Maria += 1
-        else:
-            player = True
-            prime_exist = 1
-            n = list(range(2, nums[r_i] + 1))
-            while (prime_exist):
-                prime_exist = 0
-                for i in n:
-                    if (isPrime(i)):
-                        prime_exist = 1
-                        player = not player
-                        n = list(filter(lambda x: x % i != 0, n))
-            if (player):
-                Ben += 1
-            else:
-                Maria += 1
-
-    if Maria > Ben:
-        return 'Maria'
-    elif Ben > Maria:
-        return 'Ben'
-    return None
+    n = max(nums)
+    prime_exists = [True for _ in range(1, n + 1, 1)]
+    prime_exists[0] = False
+    for i, isPrime in enumerate(prime_exists, 1):
+        if i == 1 or not isPrime:
+            continue
+        for j in range(i + i, n + 1, i):
+            prime_exists[j - 1] = False
+    for _, n in zip(range(x), nums):
+        prime_count = len(list(filter(lambda x: x, prime_exists[0: n])))
+        Ben += prime_count % 2 == 0
+        Maria += prime_count % 2 == 1
+    if Maria == Ben:
+        return None
+    return 'Maria' if Maria > Ben else 'Ben'
